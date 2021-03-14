@@ -19,6 +19,7 @@ const бот = new ТГ({
 process.on('SIGINT', () => {
 	бд.close((помилка) => {
 		помилка ? console.error(помилка.message) : console.log('Відключенно від БД')
+		process.exit(0)
 	})
 })
 
