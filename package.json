@@ -1,0 +1,9 @@
+{
+	"name": "bitgame",
+	"version": "1.0.0",
+	"main": "master.js",
+	"dependencies": {
+		"sqlite3": "^5.0.2",
+		"telebot": "^1.4.1"
+	}
+}
