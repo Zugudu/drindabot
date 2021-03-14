@@ -12,7 +12,8 @@ const бд = new склайт.Database('db.sqlite3', (помилка) => {
 CREATE TABLE user(
 	id INTEGER PRIMARY KEY UNIQUE,
 	money INTEGER DEFAULT 0 NOT NULL,
-	last INTEGER NOT NULL
+	last INTEGER NOT NULL,
+	name TEXT NOT NULL
 ) WITHOUT ROWID;
 `
 скриптСтворенняГри = 'CREATE TABLE game(time INTEGER UNIQUE NOT NULL, result INTEGER);'
