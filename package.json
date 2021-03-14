@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"main": "master.js",
 	"dependencies": {
+		"dotenv": "^8.2.0",
 		"sqlite3": "^5.0.2",
 		"telebot": "^1.4.1"
 	}

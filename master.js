@@ -1,5 +1,15 @@
 const склайт = require('sqlite3').verbose()
 const ТГ = require('telebot')
+require('dotenv').config()
+
+
+//Перевірка змінних середовища
+console.log('Перевірка змінних середовища')
+if(!process.env.TOKEN){
+	console.error('Немає змінної TOKEN у файлі .env')
+	process.exit(1)
+}
+if(process.env.INTERVAL) console.warn('Немає змінної INTERVAL у файлі .env, використовую 2000')
 
 
 //Ініціалізація данних
@@ -11,9 +21,9 @@ const бд = new склайт.Database('db.sqlite3', (помилка) => {
 	console.log('Підключено до БД')
 })
 const бот = new ТГ({
-	token: '1693335536:AAH_ztCNU2tYM804vx2PYEJq7E7kBM_ICc4',
+	token: process.env.TOKEN,
 	polling: {
-		interval: 2000
+		interval: (process.env.INTERVAL || 2000)
 	}
 })
 process.on('SIGINT', () => {
